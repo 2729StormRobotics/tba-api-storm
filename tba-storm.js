@@ -100,4 +100,20 @@ class TBA{
   getSingleMatch(matchKey){
     return this.callAPI('match/' + matchKey);
   }
+
+  getDistrictList(year){
+    return this.callAPI('districts/' + year);
+  }
+
+  getDistrictEvents(districtShort, year){
+    return this.callAPI('district/' + districtShort + '/' + year + '/events');
+  }
+
+  getDistrictRankings(districtShort, year){
+    return this.callAPI('district/' + districtShort + '/' + year + '/rankings');
+  }
+
+  getDistrictTeams(districtShort, year){
+    return this.callAPI('district/' + districtShort + '/' + year + '/teams');
+  }
 }
