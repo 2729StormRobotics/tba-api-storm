@@ -117,3 +117,4 @@ class TBA{
     return this.callAPI('district/' + districtShort + '/' + year + '/teams');
   }
 }
+module.exports = TBA;

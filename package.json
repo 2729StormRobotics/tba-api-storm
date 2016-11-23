@@ -1,6 +1,6 @@
 {
   "name": "tba-api-storm",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Promised based NodeJS api for interacting with thebluealliance",
   "main": "tba-storm.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/2729StormRobotics/tba-storm-node.git"
+    "url": "git+https://github.com/2729StormRobotics/tba-api-storm.git"
   },
   "keywords": [
     "tba",
