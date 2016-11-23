@@ -64,4 +64,40 @@ class TBA{
   getTeamDistrictsHistory(teamNum){
     return this.callAPI('team/frc' + teamNum + '/history/districts');
   }
+
+  getEventList(year){
+    return this.callAPI('events/' + year);
+  }
+
+  getEvent(eventKey){
+    return this.callAPI('event/' + eventKey);
+  }
+
+  getEventTeams(eventKey){
+    return this.callAPI('event/' + eventKey + '/teams');
+  }
+
+  getEventMatches(eventKey){
+    return this.callAPI('event/' + eventKey + '/matches');
+  }
+
+  getEventStats(eventKey){
+    return this.callAPI('event/' + eventKey + '/stats');
+  }
+
+  getEventRankings(eventKey){
+    return this.callAPI('event/' + eventKey + '/rankings');
+  }
+
+  getEventAwards(eventKey){
+    return this.callAPI('event/' + eventKey + '/awards');
+  }
+
+  getEventDistrictPoints(eventKey){
+    return this.callAPI('event/' + eventKey + '/district_points');
+  }
+
+  getSingleMatch(matchKey){
+    return this.callAPI('match/' + matchKey);
+  }
 }
