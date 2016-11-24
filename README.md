@@ -114,6 +114,6 @@ The constructor takes in the data needed for the X-TBA-App-Id header, which is n
 
 [District Teams Request](https://www.thebluealliance.com/apidocs#district-teams-request)
 
-`getDistrictTeams(district, year)
+`getDistrictTeams(district, year)`
 
 TODO: Documentation 
