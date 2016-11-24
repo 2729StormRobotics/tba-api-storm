@@ -1,124 +1,124 @@
 'use strict';
 const https = require('https')
-class TBA{
-  constructor(id, desc, version){
-    this.header = '?X-TBA-App-Id=' + id + ':' + desc + ':' + version;
-    this.base = 'https://www.thebluealliance.com/api/v2/';
-  }
+class TBA {
+    constructor(id, desc, version) {
+        this.header = '?X-TBA-App-Id=' + id + ':' + desc + ':' + version;
+        this.base = 'https://www.thebluealliance.com/api/v2/';
+    }
 
-  callAPI(uri){
-    return new Promise((resolve, reject) => {
-      let content = '';
-      https.get(this.base + uri + this.header, res => {
-        if(res.statusCode != 200) {
-	  reject(res.statusCode + ': ' + res.statusMessage);
-	}
-	
-	res.on('data', data => {
-	  content += data;
-	});
+    callAPI(uri) {
+        return new Promise((resolve, reject) => {
+            let content = '';
+            https.get(this.base + uri + this.header, res => {
+                if (res.statusCode != 200) {
+                    reject(res.statusCode + ': ' + res.statusMessage);
+                }
 
-	res.on('end', data => {
-	 if(res.statusCode == 200) resolve(JSON.parse(content));
-	});
-      });
-    });
-  }
+                res.on('data', data => {
+                    content += data;
+                });
 
-  getTeamList(pageNum) {
-    return this.callAPI('teams/' + pageNum);
-  }
+                res.on('end', data => {
+                    if (res.statusCode == 200) resolve(JSON.parse(content));
+                });
+            });
+        });
+    }
 
-  getTeam(teamNum){
-    return this.callAPI('team/frc' + teamNum);
-  }
+    getTeamList(pageNum) {
+        return this.callAPI('teams/' + pageNum);
+    }
 
-  getTeamEvents(teamNum, year){
-    return this.callAPI('team/frc' + teamNum + (typeof year === undefined ? '/' + year : '') + '/events');
-  }
+    getTeam(teamNum) {
+        return this.callAPI('team/frc' + teamNum);
+    }
 
-  getTeamEventAwards(teamNum, eventKey){
-    return this.callAPI('team/frc' + teamNum + '/event/' + eventKey + '/awards');
-  }
+    getTeamEvents(teamNum, year) {
+        return this.callAPI('team/frc' + teamNum + (typeof year === undefined ? '/' + year : '') + '/events');
+    }
 
-  getTeamEventMatches(teamNum, eventKey){
-    return this.callAPI('team/frc' + teamNum + '/event/' + eventKey + "/matches");
-  }
+    getTeamEventAwards(teamNum, eventKey) {
+        return this.callAPI('team/frc' + teamNum + '/event/' + eventKey + '/awards');
+    }
 
-  getYearsParticipated(teamNum){
-    return this.callAPI('team/frc' + teamNum + '/years_participated');
-  }
+    getTeamEventMatches(teamNum, eventKey) {
+        return this.callAPI('team/frc' + teamNum + '/event/' + eventKey + "/matches");
+    }
 
-  getTeamMedia(teamNum, year){
-    return this.callAPI('team/frc' + teamNum + (typeof year === undefined ? '/' + year : '') + '/media');
-  }
+    getYearsParticipated(teamNum) {
+        return this.callAPI('team/frc' + teamNum + '/years_participated');
+    }
 
-  getTeamEventHistory(teamNum){
-    return this.callAPI('team/frc' + teamNum + '/history/events');
-  }
+    getTeamMedia(teamNum, year) {
+        return this.callAPI('team/frc' + teamNum + (typeof year === undefined ? '/' + year : '') + '/media');
+    }
 
-  getTeamAwardHistory(teamNum){
-    return this.callAPI('team/frc' + teamNum + '/history/awards');
-  }
+    getTeamEventHistory(teamNum) {
+        return this.callAPI('team/frc' + teamNum + '/history/events');
+    }
 
-  getTeamRobotHistory(teamNum){
-    return this.callAPI('team/frc' + teamNum + '/history/robots');
-  }
+    getTeamAwardHistory(teamNum) {
+        return this.callAPI('team/frc' + teamNum + '/history/awards');
+    }
 
-  getTeamDistrictHistory(teamNum){
-    return this.callAPI('team/frc' + teamNum + '/history/districts');
-  }
+    getTeamRobotHistory(teamNum) {
+        return this.callAPI('team/frc' + teamNum + '/history/robots');
+    }
 
-  getEventList(year){
-    return this.callAPI('events/' + year);
-  }
+    getTeamDistrictHistory(teamNum) {
+        return this.callAPI('team/frc' + teamNum + '/history/districts');
+    }
 
-  getEvent(eventKey){
-    return this.callAPI('event/' + eventKey);
-  }
+    getEventList(year) {
+        return this.callAPI('events/' + year);
+    }
 
-  getEventTeams(eventKey){
-    return this.callAPI('event/' + eventKey + '/teams');
-  }
+    getEvent(eventKey) {
+        return this.callAPI('event/' + eventKey);
+    }
 
-  getEventMatches(eventKey){
-    return this.callAPI('event/' + eventKey + '/matches');
-  }
+    getEventTeams(eventKey) {
+        return this.callAPI('event/' + eventKey + '/teams');
+    }
 
-  getEventStats(eventKey){
-    return this.callAPI('event/' + eventKey + '/stats');
-  }
+    getEventMatches(eventKey) {
+        return this.callAPI('event/' + eventKey + '/matches');
+    }
 
-  getEventRankings(eventKey){
-    return this.callAPI('event/' + eventKey + '/rankings');
-  }
+    getEventStats(eventKey) {
+        return this.callAPI('event/' + eventKey + '/stats');
+    }
 
-  getEventAwards(eventKey){
-    return this.callAPI('event/' + eventKey + '/awards');
-  }
+    getEventRankings(eventKey) {
+        return this.callAPI('event/' + eventKey + '/rankings');
+    }
 
-  getEventDistrictPoints(eventKey){
-    return this.callAPI('event/' + eventKey + '/district_points');
-  }
+    getEventAwards(eventKey) {
+        return this.callAPI('event/' + eventKey + '/awards');
+    }
 
-  getSingleMatch(matchKey){
-    return this.callAPI('match/' + matchKey);
-  }
+    getEventDistrictPoints(eventKey) {
+        return this.callAPI('event/' + eventKey + '/district_points');
+    }
 
-  getDistrictList(year){
-    return this.callAPI('districts/' + year);
-  }
+    getSingleMatch(matchKey) {
+        return this.callAPI('match/' + matchKey);
+    }
 
-  getDistrictEvents(districtShort, year){
-    return this.callAPI('district/' + districtShort + '/' + year + '/events');
-  }
+    getDistrictList(year) {
+        return this.callAPI('districts/' + year);
+    }
 
-  getDistrictRankings(districtShort, year){
-    return this.callAPI('district/' + districtShort + '/' + year + '/rankings');
-  }
+    getDistrictEvents(districtShort, year) {
+        return this.callAPI('district/' + districtShort + '/' + year + '/events');
+    }
 
-  getDistrictTeams(districtShort, year){
-    return this.callAPI('district/' + districtShort + '/' + year + '/teams');
-  }
+    getDistrictRankings(districtShort, year) {
+        return this.callAPI('district/' + districtShort + '/' + year + '/rankings');
+    }
+
+    getDistrictTeams(districtShort, year) {
+        return this.callAPI('district/' + districtShort + '/' + year + '/teams');
+    }
 }
 module.exports = TBA;
