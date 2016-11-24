@@ -49,19 +49,19 @@ class TBA{
     return this.callAPI('team/frc' + teamNum + (typeof year === undefined ? '/' + year : '') + '/media');
   }
 
-  getTeamEventsHistory(teamNum){
+  getTeamEventHistory(teamNum){
     return this.callAPI('team/frc' + teamNum + '/history/events');
   }
 
-  getTeamAwardsHistory(teamNum){
+  getTeamAwardHistory(teamNum){
     return this.callAPI('team/frc' + teamNum + '/history/awards');
   }
 
-  getTeamRobotsHistory(teamNum){
+  getTeamRobotHistory(teamNum){
     return this.callAPI('team/frc' + teamNum + '/history/robots');
   }
 
-  getTeamDistrictsHistory(teamNum){
+  getTeamDistrictHistory(teamNum){
     return this.callAPI('team/frc' + teamNum + '/history/districts');
   }
 
