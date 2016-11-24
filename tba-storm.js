@@ -1,22 +1,26 @@
 'use strict';
-const unirest = require('unirest');
+const https = require('https')
 class TBA{
   constructor(id, desc, version){
-    this.header = id + ':' + desc + ':' + version;
+    this.header = '?X-TBA-App-Id=' + id + ':' + desc + ':' + version;
     this.base = 'https://www.thebluealliance.com/api/v2/';
   }
 
   callAPI(uri){
     return new Promise((resolve, reject) => {
-      unirest.get(this.base + uri + '?X-TBA-App-Id=' + this.header)
-      .header('Accept', 'application/json')
-      .end(function(response){
-        if(response.error){
-          reject('Error.  Status Code: ' + response.code);
-        }
-        else{
-          resolve(JSON.parse(response.raw_body));
-        }
+      let content = '';
+      https.get(this.base + uri + this.header, res => {
+        if(res.statusCode != 200) {
+	  reject(res.statusCode + ': ' + res.statusMessage);
+	}
+	
+	res.on('data', data => {
+	  content += data;
+	});
+
+	res.on('end', data => {
+	 if(res.statusCode == 200) resolve(JSON.parse(content));
+	});
       });
     });
   }
