@@ -1,3 +1,14 @@
+<div align="center">
+  <p>
+    <a href="https://nodei.co/npm/discord.js/"><img src="https://nodei.co/npm/tba-api-storm.png?downloads=true&stars=true" alt="NPM info" /></a>
+  </p>
+  <p>
+    <a href="https://www.npmjs.com/package/tba-api-storm"><img src="https://img.shields.io/npm/v/tba-api-storm.svg?maxAge=3600" alt="NPM version" /></a>
+    <a href="https://www.npmjs.com/package/tba-api-storm"><img src="https://img.shields.io/npm/dt/tba-api-storm.svg?maxAge=3600" alt="NPM downloads" /></a>
+    <a href="https://david-dm.org/2729StormRobotics/tba-api-storm"><img src="https://img.shields.io/david/2729StormRobotics/tba-api-storm.svg?maxAge=3600" alt="Dependencies" /></a>
+  </p>
+</div>
+
 Simple NodeJS API to get data from [thebluealliance](https://www.thebluealliance.com)
 
 Note: All methods return Promises, so if you do not know what they are, read [this](https://davidwalsh.name/promises) article before continuing
