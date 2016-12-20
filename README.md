@@ -3,7 +3,7 @@
     <a href="https://nodei.co/npm/tba-api-storm/"><img src="https://nodei.co/npm/tba-api-storm.png?downloads=true&stars=true" alt="NPM info" /></a>
   </p>
   <p>
-    <a href="https://www.stormroboticsnj.org"><img src="https://img.shields.io/badge/team-2729-f68424.svg"/></a>
+    <a href="http://www.stormroboticsnj.org"><img src="https://img.shields.io/badge/team-2729-f68424.svg"/></a>
     <a href="https://www.npmjs.com/package/tba-api-storm"><img src="https://img.shields.io/npm/v/tba-api-storm.svg?maxAge=3600" alt="NPM version" /></a>
     <a href="https://www.npmjs.com/package/tba-api-storm"><img src="https://img.shields.io/npm/dt/tba-api-storm.svg?maxAge=3600" alt="NPM downloads" /></a>
     <a href="https://david-dm.org/2729StormRobotics/tba-api-storm"><img src="https://img.shields.io/david/2729StormRobotics/tba-api-storm.svg?maxAge=3600" alt="Dependencies" /></a>
