@@ -1,6 +1,6 @@
 {
   "name": "tba-api-storm",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Promised based NodeJS api for interacting with thebluealliance",
   "main": "tba-storm.js",
   "scripts": {
