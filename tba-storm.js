@@ -34,7 +34,7 @@ class TBA {
     }
 
     getTeamEvents(teamNum, year) {
-        return this.callAPI('team/frc' + teamNum + (typeof year === undefined ? '/' + year : '') + '/events');
+        return this.callAPI('team/frc' + teamNum + (typeof year === undefined ? '' : '/' + year) + '/events');
     }
 
     getTeamEventAwards(teamNum, eventKey) {
@@ -50,7 +50,7 @@ class TBA {
     }
 
     getTeamMedia(teamNum, year) {
-        return this.callAPI('team/frc' + teamNum + (typeof year === undefined ? '/' + year : '') + '/media');
+        return this.callAPI('team/frc' + teamNum + (typeof year === undefined ? '' : '/' + year) + '/media');
     }
 
     getTeamEventHistory(teamNum) {
