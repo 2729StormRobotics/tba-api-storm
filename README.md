@@ -21,7 +21,7 @@ Note: All methods return Promises, so if you do not know what they are, read [th
 npm install tba-api-storm
 ```
 ##Intialization
-The constructor takes in the data needed for the X-TBA-App-Id header, which is need for the API requests (For more info on thebluealliance RESTful API, see [this](https://www.thebluealliance.com/apidocs))
+The constructor takes in the data needed for the X-TBA-App-Id header, which is needed for the API requests (For more info on thebluealliance RESTful API, see [this](https://www.thebluealliance.com/apidocs))
 
 ##Method Overview
 ### Team Requests
