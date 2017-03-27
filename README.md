@@ -14,16 +14,16 @@ Simple NodeJS API to get data from [thebluealliance](https://www.thebluealliance
 
 Note: All methods return Promises, so if you do not know what they are, read [this](https://davidwalsh.name/promises) article before continuing
 
-#Usage
-##Installation
+# Usage
+## Installation
 
 ```js
 npm install tba-api-storm
 ```
-##Intialization
+## Intialization
 The constructor takes in the data needed for the X-TBA-App-Id header, which is needed for the API requests (For more info on thebluealliance RESTful API, see [this](https://www.thebluealliance.com/apidocs))
 
-##Method Overview
+## Method Overview
 ### Team Requests
 
 [Team List Request](https://www.thebluealliance.com/apidocs#team-list-request)
