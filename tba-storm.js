@@ -1,9 +1,8 @@
-'use strict';
 const https = require('https')
 class TBA {
-    constructor(id, desc, version) {
-        this.header = '?X-TBA-App-Id=' + id + ':' + desc + ':' + version;
-        this.base = 'https://www.thebluealliance.com/api/v2/';
+    constructor(auth_key) {
+        this.header = '?X-TBA-Auth-Key=' + auth_key;
+        this.base = 'https://www.thebluealliance.com/api/v3/';
     }
 
     callAPI(uri) {
@@ -24,50 +23,114 @@ class TBA {
             });
         });
     }
+    
+    //Teams
 
     getTeamList(pageNum) {
         return this.callAPI('teams/' + pageNum);
+    }
+    
+    getTeamListSimple(pageNum) {
+        return this.callAPI('teams/' + pageNum + '/simple');
+    }
+    
+    getTeamList(year, pageNum) {
+        return this.callAPI('teams/' + year + '/' + pageNum);
+    }
+    
+    getTeamListSimple(year, pageNum) {
+        return this.callAPI('teams/' + year + '/' + pageNum + '/simple');
     }
 
     getTeam(teamNum) {
         return this.callAPI('team/frc' + teamNum);
     }
-
-    getTeamEvents(teamNum, year) {
-        return this.callAPI('team/frc' + teamNum + (year ? '/' + year : '') + '/events');
+    
+    getTeamSimple(teamNum) {
+        return this.callAPI('team/frc' + teamNum + '/simple');
     }
-
-    getTeamEventAwards(teamNum, eventKey) {
-        return this.callAPI('team/frc' + teamNum + '/event/' + eventKey + '/awards');
-    }
-
-    getTeamEventMatches(teamNum, eventKey) {
-        return this.callAPI('team/frc' + teamNum + '/event/' + eventKey + "/matches");
-    }
-
+    
     getYearsParticipated(teamNum) {
         return this.callAPI('team/frc' + teamNum + '/years_participated');
     }
+    
+    getTeamDistricts(teamNum) {
+        return this.callAPI('team/frc' + teamNum + '/districts');
+    }
+
+    getTeamRobots(teamNum) {
+        return this.callAPI('team/frc' + teamNum + '/robots');
+    }
+    
+    getTeamEvents(teamNum) {
+        return this.callAPI('team/frc' + teamNum + '/events');
+    }
+    
+    getTeamEvents(teamNum, year) {
+        return this.callAPI('team/frc' + teamNum + '/events/' + year);
+    }
+    
+    getTeamEventsSimple(teamNum) {
+        return this.callAPI('team/frc' + teamNum + '/events/simple');
+    }
+    
+    getTeamEventsSimple(teamNum, year) {
+        return this.callAPI('team/frc' + teamNum + '/events/' + year + '/simple');
+    }
+    
+    getTeamEventsKeys(teamNum) {
+        return this.callAPI('team/frc' + teamNum + '/events/keys');
+    }
+    
+    getTeamEventsKeys(teamNum, year) {
+        return this.callAPI('team/frc' + teamNum + '/events/' + year + '/keys');
+    }
+    
+    getTeamEventMatches(teamNum, eventKey) {
+        return this.callAPI('team/frc' + teamNum + '/event/' + eventKey + "/matches");
+    }
+    
+    getTeamEventMatchesSimple(teamNum, eventKey) {
+        return this.callAPI('team/frc' + teamNum + '/event/' + eventKey + "/matches/simple");
+    }
+    
+    getTeamEventMatchesKeys(teamNum, eventKey) {
+        return this.callAPI('team/frc' + teamNum + '/event/' + eventKey + "/matches/simple");
+    }
+    
+    getTeamEventAwards(teamNum, eventKey) {
+        return this.callAPI('team/frc' + teamNum + '/event/' + eventKey + '/awards');
+    }
+    
+    getTeamEventStatus(teamNum, eventKey) {
+        return this.callAPI('team/frc' + teamNum + '/event/' + eventKey + '/awards');
+    }
+    
+    getTeamAwards(teamNum, year) {
+        return this.callAPI('team/frc' + teamNum + '/awards' + year);
+    }
+    
+    getTeamMatches(teamNum, year) {
+        return this.callAPI('team/frc' + teamNum + '/matches/' + year);
+    }
+    
+    getTeamMatchesSimple(teamNum, year) {
+        return this.callAPI('team/frc' + teamNum + '/matches/' + year + '/simple');
+    }
+    
+    getTeamMatchesKeys(teamNum, year) {
+        return this.callAPI('team/frc' + teamNum + '/matches/' + year + '/keys');
+    }
 
     getTeamMedia(teamNum, year) {
-        return this.callAPI('team/frc' + teamNum + (year ? '/' + year : '') + '/media');
+        return this.callAPI('team/frc' + teamNum + '/media/' + year);
     }
-
-    getTeamEventHistory(teamNum) {
-        return this.callAPI('team/frc' + teamNum + '/history/events');
+    
+    getTeamSocialMedia(teamNum) {
+        return this.callAPI('team/frc' + teamNum + '/social_media');
     }
-
-    getTeamAwardHistory(teamNum) {
-        return this.callAPI('team/frc' + teamNum + '/history/awards');
-    }
-
-    getTeamRobotHistory(teamNum) {
-        return this.callAPI('team/frc' + teamNum + '/history/robots');
-    }
-
-    getTeamDistrictHistory(teamNum) {
-        return this.callAPI('team/frc' + teamNum + '/history/districts');
-    }
+    
+    //Events
 
     getEventList(year) {
         return this.callAPI('events/' + year);
