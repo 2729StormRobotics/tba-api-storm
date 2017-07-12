@@ -1,10 +1,10 @@
 const TBA = require('./tba-storm');
+var test = new TBA('token');
 
-var test = new TBA('1',1,'1');
 console.time('test');
-test.getTeamEvents(2729, 2015).then(res => {
-  console.log(res);
-  console.timeEnd('test');
+test.getTeamEventList(2729, 2016).then(res => {
+	console.log(res);
+	console.timeEnd('test');
 }).catch(res => {
-  console.log(res);
+	console.log(res);
 });
