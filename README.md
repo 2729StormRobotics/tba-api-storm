@@ -14,8 +14,6 @@ Simple NodeJS API to get data from [thebluealliance](https://www.thebluealliance
 
 Note: All methods return Promises, so if you do not know what they are, read [this](https://davidwalsh.name/promises) article before continuing
 
-DEPRECATED: thebluealliance has deprecated their v2 api and will be decomissioned soon
-
 # Usage
 ## Installation
 
