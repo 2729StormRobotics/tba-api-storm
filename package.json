@@ -1,7 +1,7 @@
 {
   "name": "tba-api-storm",
-  "version": "1.0.4",
-  "description": "Promised based NodeJS api for interacting with thebluealliance",
+  "version": "1.0.6",
+  "description": "Promised based NodeJS api for interacting with thebluealliance for V#",
   "main": "tba-storm.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,10 +16,10 @@
     "tba-api",
     "promise"
   ],
-  "author": "Tom Orth (atf1999)",
+  "author": "Tom Orth (atf1999), Michael Cao (mcao)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/2729StormRobotics/tba-storm-node/issues"
+    "url": "https://github.com/2729StormRobotics/tba-storm-storm/issues"
   },
-  "homepage": "https://github.com/2729StormRobotics/tba-storm-node#readme"
+  "homepage": "https://github.com/2729StormRobotics/tba-storm-storm#readme"
 }
