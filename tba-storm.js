@@ -111,7 +111,7 @@ class TBA {
 	}
 
 	getTeamAwards(teamNum, year) {
-		return this.callAPI('team/frc' + teamNum + '/awards' + year);
+		return this.callAPI('team/frc' + teamNum + '/awards/' + year);
 	}
 
 	getTeamMatchList(teamNum, year) {
