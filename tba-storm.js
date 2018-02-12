@@ -38,12 +38,13 @@ class TBA {
 		return this.callAPI('teams/' + pageNum + '/simple');
 	}
 
-	getTeamList(year, pageNum) {
-		return this.callAPI('teams/' + year + '/' + pageNum);
+	getTeamList(pageNum, year) {
+		return this.callAPI('teams' + (year === undefined ? '' : '/' + year) + '/' + pageNum);
 	}
 
-	getTeamListSimple(year, pageNum) {
-		return this.callAPI('teams/' + year + '/' + pageNum + '/simple');
+	getTeamListSimple(pageNum, year) {
+		console.log(year);
+		return this.callAPI('teams' + (year === undefined ? '' : '/' + year) + '/' + pageNum + '/simple');
 	}
 
 	getTeam(teamNum) {
@@ -71,7 +72,7 @@ class TBA {
 	}
 
 	getTeamEventList(teamNum, year) {
-		return this.callAPI('team/frc' + teamNum + '/events/' + year);
+		return this.callAPI('team/frc' + teamNum + '/events' + (year === undefined ? '' : '/' + year));
 	}
 
 	getTeamEventListSimple(teamNum) {
@@ -79,7 +80,7 @@ class TBA {
 	}
 
 	getTeamEventListSimple(teamNum, year) {
-		return this.callAPI('team/frc' + teamNum + '/events/' + year + '/simple');
+		return this.callAPI('team/frc' + teamNum + '/events' + (year === undefined ? '' : '/' + year) + '/simple');
 	}
 
 	getTeamEventListKeys(teamNum) {
@@ -87,7 +88,7 @@ class TBA {
 	}
 
 	getTeamEventListKeys(teamNum, year) {
-		return this.callAPI('team/frc' + teamNum + '/events/' + year + '/keys');
+		return this.callAPI('team/frc' + teamNum + '/events' + (year === undefined ? '' : '/' + year) + '/keys');
 	}
 
 	getTeamEventMatchList(teamNum, eventKey) {
