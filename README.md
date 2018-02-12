@@ -30,3 +30,7 @@ The constructor takes in the data needed for the X-TBA-App-Id header, which is n
 ## Method Overview
 
 Dcoumentation and method calls for API v3 is in the form of docstrings for now.
+
+## Notes
+
+Anyone who upgrades from version 1.0.6 to a newer version, please look at the method signatures for some have changed 

@@ -1,11 +1,8 @@
 {
   "name": "tba-api-storm",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "description": "Promised based NodeJS api for interacting with thebluealliance for V#",
   "main": "tba-storm.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/2729StormRobotics/tba-api-storm.git"
@@ -21,5 +18,13 @@
   "bugs": {
     "url": "https://github.com/2729StormRobotics/tba-storm-storm/issues"
   },
-  "homepage": "https://github.com/2729StormRobotics/tba-storm-storm#readme"
+  "scripts": {
+    "test": "node_modules/.bin/mocha"
+  },
+  "homepage": "https://github.com/2729StormRobotics/tba-storm-storm#readme",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.0.0",
+    "nock": "^9.1.6"
+  }
 }
