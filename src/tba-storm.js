@@ -31,20 +31,11 @@ class TBA {
 
 	//Teams
 
-	getTeamList(pageNum) {
-		return this.callAPI('teams/' + pageNum);
-	}
-
-	getTeamListSimple(pageNum) {
-		return this.callAPI('teams/' + pageNum + '/simple');
-	}
-
 	getTeamList(pageNum, year) {
 		return this.callAPI('teams' + (year === undefined ? '' : '/' + year) + '/' + pageNum);
 	}
 
 	getTeamListSimple(pageNum, year) {
-		console.log(year);
 		return this.callAPI('teams' + (year === undefined ? '' : '/' + year) + '/' + pageNum + '/simple');
 	}
 
@@ -68,24 +59,12 @@ class TBA {
 		return this.callAPI('team/frc' + teamNum + '/robots');
 	}
 
-	getTeamEventList(teamNum) {
-		return this.callAPI('team/frc' + teamNum + '/events');
-	}
-
 	getTeamEventList(teamNum, year) {
 		return this.callAPI('team/frc' + teamNum + '/events' + (year === undefined ? '' : '/' + year));
 	}
 
-	getTeamEventListSimple(teamNum) {
-		return this.callAPI('team/frc' + teamNum + '/events/simple');
-	}
-
 	getTeamEventListSimple(teamNum, year) {
 		return this.callAPI('team/frc' + teamNum + '/events' + (year === undefined ? '' : '/' + year) + '/simple');
-	}
-
-	getTeamEventListKeys(teamNum) {
-		return this.callAPI('team/frc' + teamNum + '/events/keys');
 	}
 
 	getTeamEventListKeys(teamNum, year) {
