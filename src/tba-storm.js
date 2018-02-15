@@ -1,5 +1,7 @@
 'use strict';
-const https = require('https')
+
+const https = require('https');
+
 class TBA {
 	constructor(auth_key) {
 		this.header = '?X-TBA-Auth-Key=' + auth_key;
@@ -24,7 +26,7 @@ class TBA {
 			});
 		});
 	}
-	
+
 	getStatus() {
 		return this.callAPI('status/');
 	}
@@ -72,15 +74,15 @@ class TBA {
 	}
 
 	getTeamEventMatchList(teamNum, eventKey) {
-		return this.callAPI('team/frc' + teamNum + '/event/' + eventKey + "/matches");
+		return this.callAPI('team/frc' + teamNum + '/event/' + eventKey + '/matches');
 	}
 
 	getTeamEventMatchListSimple(teamNum, eventKey) {
-		return this.callAPI('team/frc' + teamNum + '/event/' + eventKey + "/matches/simple");
+		return this.callAPI('team/frc' + teamNum + '/event/' + eventKey + '/matches/simple');
 	}
 
 	getTeamEventMatchListKeys(teamNum, eventKey) {
-		return this.callAPI('team/frc' + teamNum + '/event/' + eventKey + "/matches/simple");
+		return this.callAPI('team/frc' + teamNum + '/event/' + eventKey + '/matches/simple');
 	}
 
 	getTeamEventAwards(teamNum, eventKey) {
@@ -120,11 +122,11 @@ class TBA {
 	getEventList(year) {
 		return this.callAPI('events/' + year);
 	}
-	
+
 	getEventListSimple(year) {
 		return this.callAPI('events/' + year + '/simple');
 	}
-	
+
 	getEventListKeys(year) {
 		return this.callAPI('events/' + year + '/keys');
 	}
@@ -132,23 +134,23 @@ class TBA {
 	getEvent(eventKey) {
 		return this.callAPI('event/' + eventKey);
 	}
-	
+
 	getEventSimple(eventKey) {
 		return this.callAPI('event/' + eventKey + '/simple');
 	}
-	
+
 	getEventAlliances(eventKey) {
 		return this.callAPI('event/' + eventKey + '/alliances');
 	}
-	
+
 	getEventInsights(eventKey) {
 		return this.callAPI('event/' + eventKey + '/insights');
 	}
-	
+
 	getEventOprs(eventKey) {
 		return this.callAPI('event/' + eventKey + '/oprs');
 	}
-	
+
 	getEventPredictions(eventKey) {
 		return this.callAPI('event/' + eventKey + '/predictions');
 	}
@@ -156,11 +158,11 @@ class TBA {
 	getEventTeams(eventKey) {
 		return this.callAPI('event/' + eventKey + '/teams');
 	}
-	
+
 	getEventTeamsSimple(eventKey) {
 		return this.callAPI('event/' + eventKey + '/teams/simple');
 	}
-	
+
 	getEventTeamsKeys(eventKey) {
 		return this.callAPI('event/' + eventKey + '/teams/keys');
 	}
@@ -168,11 +170,11 @@ class TBA {
 	getEventMatches(eventKey) {
 		return this.callAPI('event/' + eventKey + '/matches');
 	}
-	
+
 	getEventMatchesSimple(eventKey) {
 		return this.callAPI('event/' + eventKey + '/matches/simple');
 	}
-	
+
 	getEventMatchesKeys(eventKey) {
 		return this.callAPI('event/' + eventKey + '/matches/keys');
 	}
@@ -188,17 +190,17 @@ class TBA {
 	getEventDistrictPoints(eventKey) {
 		return this.callAPI('event/' + eventKey + '/district_points');
 	}
-	
+
 	//Matches
 
 	getMatch(matchKey) {
 		return this.callAPI('match/' + matchKey);
 	}
-	
+
 	getMatchSimple(matchKey) {
 		return this.callAPI('match/' + matchKey + '/simple');
 	}
-	
+
 	//Districts
 
 	getDistrictList(year) {
@@ -208,11 +210,11 @@ class TBA {
 	getDistrictEvents(districtShort) {
 		return this.callAPI('district/' + districtShort + '/events');
 	}
-	
+
 	getDistrictEventsSimple(districtShort) {
 		return this.callAPI('district/' + districtShort + '/events/simple');
 	}
-	
+
 	getDistrictEventsKeys(districtShort) {
 		return this.callAPI('district/' + districtShort + '/events/keys');
 	}
@@ -224,13 +226,14 @@ class TBA {
 	getDistrictTeams(districtShort, year) {
 		return this.callAPI('district/' + districtShort + '/teams');
 	}
-	
+
 	getDistrictTeamsSimple(districtShort, year) {
 		return this.callAPI('district/' + districtShort + '/teams/simple');
 	}
-	
+
 	getDistrictTeamsKeys(districtShort, year) {
 		return this.callAPI('district/' + districtShort + '/teams/keys');
 	}
 }
+
 module.exports = TBA;
