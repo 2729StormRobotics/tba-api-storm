@@ -90,7 +90,7 @@ class TBA {
 	}
 
 	getTeamEventStatus(teamNum, eventKey) {
-		return this.callAPI('team/frc' + teamNum + '/event/' + eventKey + '/awards');
+		return this.callAPI('team/frc' + teamNum + '/event/' + eventKey + '/status');
 	}
 
 	getTeamAwards(teamNum, year) {
