@@ -1,0 +1,34 @@
+{
+	"extends": [
+		"eslint:recommended",
+		"plugin:node/recommended",
+		"plugin:promise/recommended",
+		"plugin:import/errors",
+		"plugin:import/warnings"
+	],
+	"plugins": [
+		"promise",
+		"import"
+	],
+	"env": {
+		"es6": true,
+		"node": true
+	},
+	"parserOptions": {
+		"ecmaVersion": 6,
+		"sourceType": "module"
+	},
+	"rules": {
+		"indent": ["error", "tab"],
+		"semi": "error",
+		"quotes": [
+			"error",
+			"single",
+			{
+				"allowTemplateLiterals": true,
+				"avoidEscape": true
+			}
+		]
+	}
+}
+
