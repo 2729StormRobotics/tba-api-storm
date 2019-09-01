@@ -7,13 +7,6 @@ language: node_js
 node_js:
   - "node"
   - "lts/*"
-  - "lts/Argon"
-  - "lts/Boron"
-  - "lts/Carbon"
-  - "8"
-  - "7"
-  - "6"
-  - "5"
 
 addons:
   sonarcloud:
