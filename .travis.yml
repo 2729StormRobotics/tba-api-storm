@@ -18,13 +18,12 @@ jdk:
   - oraclejdk8
 
 script:
-  - npm install
-  - npm build
-  - npm test
+  - yarn run install
+  - yarn run build
+  - yarn run test
   - sonar-scanner
 
 cache:
   directories:
     - "node_modules"
     - "$HOME/.sonar/cache/"
-
