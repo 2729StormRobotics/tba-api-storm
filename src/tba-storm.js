@@ -92,6 +92,10 @@ class TBA {
 	getTeamEventStatus(teamNum, eventKey) {
 		return this.callAPI('team/frc' + teamNum + '/event/' + eventKey + '/awards');
 	}
+	
+	getTeamAwards(teamNum) {
+		return this.callAPI('team/frc' + teamNum + '/awards');
+	}
 
 	getTeamAwards(teamNum, year) {
 		return this.callAPI('team/frc' + teamNum + '/awards/' + year);
